@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="refresh" content="86400">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <title>Takara Fukuroi</title>
+  <!-- CSS only -->
+  <link href="./bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="./styles/bootstrap_icons/bootstrap-icons.css" rel="stylesheet">
+  <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">-->
+  <style>
+    /* Style the video: 100% width and height to cover the entire window */
+    #myVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+    }
+    @font-face{
+      font-family: 'Black Ops One';
+      src: url('./fonts/BlackOpsOne-Regular.ttf') format('truetype');
+    }
+    @font-face{
+      font-family: 'Coda Caption';
+      src: url('./fonts/CodaCaption-ExtraBold.ttf') format('truetype');
+    }
+    /*
+    @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap');
+    */
+    .banner{
+      /*background-color: #f5f5f5;*/
+      padding: 0;
+    }
+
+    .priceTable{
+      background-color: #f5f5f5;
+      box-shadow: 0 0 15px 15px rgba(68, 68, 68, 0.315);
+      z-index: 2;
+    }
+    .priceTable table.table{
+      /*font-family: 'Black Ops One', cursive;*/
+      font-family: sans-serif;
+      /*font-size: 1.2em;*/
+      transition: 1.2s;
+    }
+
+    .priceTable table.table tbody td.special{
+      color: red;
+      font-weight: bold;
+      /*font-size: 1.1em;*/
+    }
+
+    div.carousel{
+      font-size: 20pt;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    div.carousel-inner{
+      height: 100%;
+    }
+
+    div.carousel div.carousel-item{
+      overflow: hidden;
+      font-weight: bolder;
+      font-family: 'Coda Caption', sans-serif;
+      text-transform: uppercase;
+      text-shadow: rgb(255, 255, 255) 2px 0px 0px, rgb(255, 255, 255) 1.75517px 0.958851px 0px, rgb(255, 255, 255) 1.0806px 1.68294px 0px, rgb(255, 255, 255) 0.141474px 1.99499px 0px, rgb(255, 255, 255) -0.832294px 1.81859px 0px, rgb(255, 255, 255) -1.60229px 1.19694px 0px, rgb(255, 255, 255) -1.97998px 0.28224px 0px, rgb(255, 255, 255) -1.87291px -0.701566px 0px, rgb(255, 255, 255) -1.30729px -1.5136px 0px, rgb(255, 255, 255) -0.421592px -1.95506px 0px, rgb(255, 255, 255) 0.567324px -1.91785px 0px, rgb(255, 255, 255) 1.41734px -1.41108px 0px, rgb(255, 255, 255) 1.92034px -0.558831px 0px;
+      background-color: #f5f5f5;
+      height: 100%;
+    }
+
+    div.carousel div.carousel-item img{
+      max-height: 100vh!important;
+      width: auto!important;
+      z-index: 1;
+      /*align-self: stretch;*/
+    }
+    @media only screen and (max-width: 1140px) {
+      div.carousel div.carousel-item img{
+        max-height: 100vh!important;
+        max-width: 100%;
+      }
+    }
+
+    div.carousel div.carousel-item .carousel-caption{
+      /*background-color: rgba(255,255,255,0.33);*/
+      border-radius: 15px;
+      padding: 15px;
+      align-self:self-end;
+    }
+
+
+    div.carousel div.carousel-item .carousel-caption .price{
+      font-family: 'Black Ops One', cursive;
+      color: red;
+      font-size: 3em;
+      font-weight: bolder;
+      text-shadow: rgb(255, 255, 255) 2px 0px 0px, rgb(255, 255, 255) 1.75517px 0.958851px 0px, rgb(255, 255, 255) 1.0806px 1.68294px 0px, rgb(255, 255, 255) 0.141474px 1.99499px 0px, rgb(255, 255, 255) -0.832294px 1.81859px 0px, rgb(255, 255, 255) -1.60229px 1.19694px 0px, rgb(255, 255, 255) -1.97998px 0.28224px 0px, rgb(255, 255, 255) -1.87291px -0.701566px 0px, rgb(255, 255, 255) -1.30729px -1.5136px 0px, rgb(255, 255, 255) -0.421592px -1.95506px 0px, rgb(255, 255, 255) 0.567324px -1.91785px 0px, rgb(255, 255, 255) 1.41734px -1.41108px 0px, rgb(255, 255, 255) 1.92034px -0.558831px 0px;
+    }
+
+    div.carousel div.carousel-item .carousel-caption .price::before{
+      content: "￥";
+    }
+
+    div.carousel div.carousel-item .carousel-caption .kg::after{
+      content: "/kg";
+    }
+
+    /* prevent firefox from show up/down arrows for number inputs */
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button{
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number]{
+      -moz-appearance: textfield;
+    }
+
+    @media (max-width: 750px) {
+      #myVideo { display: none; }
+      body {
+        background: url("assets/starburst.webp") no-repeat;
+        background-size: cover;
+      }
+    }
+
+    @media print{
+      body{
+        background: none;
+      }
+      table tbody tr td,
+      table tbody tr th,
+      table tbody tr.table-dark td,
+      table tbody tr.table-dark th{
+        background-color: transparent;
+        color: #333!important;
+      }
+      .table-dark {
+        --bs-table-bg: #fff;
+        --bs-table-striped-bg: #fff;
+        --bs-table-striped-color: #333;
+        --bs-table-active-bg: #fff;
+        --bs-table-active-color: #333;
+        --bs-table-hover-bg: #fff;
+        --bs-table-hover-color: #333;
+        color: #333;
+        border-color: #373b3e;
+      }
+
+      td.special{
+        font-weight: 600;
+        color:red!important;
+      }
+    }
+
+    div.widgetsHolder{
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+      display: flex;
+      max-width: 66.6666%;
+    }
+    div.widgetsHolder div.widget{
+      border: 2px solid #f5f5f5;
+      outline: 2px solid #333;
+      border-radius: 5px;
+      margin: 0 5px 5px;
+      overflow: hidden;
+      min-width: 120px;
+      font-weight: bolder;
+    }
+    div.widgetsHolder div>div{
+      padding: 10px;
+    }
+    div.widgetsHolder div.widget.calendar{
+      background-color: rgba(255,255,255,1);
+      color: #333;
+      text-align: center;
+    }
+    div.widgetsHolder div.widget.calendar div.weekday{
+      background-color: rgba(255,0,0,1);
+      color: #f5f5f5;
+      font-size: 0.8em;
+      padding: 5px 10px;
+    }
+    div.widgetsHolder div.widget.calendar div.date{
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    div.widgetsHolder div.widget.clock{
+      background: hsla(0, 0%, 90%,1);
+      background: linear-gradient(90deg, hsla(0,0%, 90%, .6) 0%, hsla(0, 0%, 95%, .6) 100%);
+      color: hsla(0, 0%, 10%);
+      font-size: 3em;
+      font-weight: bold;
+    }
+
+    div.widgetsHolder div.widget.weather div{
+      font-size: 2em;
+      text-align: center;
+    }
+    div.widgetsHolder div.widget.weather div.image{
+      float: left;
+      width: 100px;
+      height: 100%;
+    }
+    div.widgetsHolder div.widget.weather div.temp{
+      float: left;
+    }
+    div.widgetsHolder div.widget.weather div.temp small{
+      display: block;
+      font-size: 0.5em;
+    }
+
+    div.widgetsHolder div.widget.weather.Clear{
+      background: rgba(249,103,2,1);
+      background: linear-gradient(90deg, hsla(26, 100%, 60%, 1) 0%, hsla(26, 100%, 44%, 1) 100%); 
+      color: hsl(26, 100%, 5%);
+    }
+
+    div.widgetsHolder div.widget.weather.Clear div.image{
+      background: url('assets/weather/clear.png') center/contain no-repeat;
+    }
+
+    div.widgetsHolder div.widget.weather.Clouds{
+      background: rgba(175,174,173,1);
+      background: linear-gradient(90deg, rgba(250,245,239,1) 0%, rgba(175,174,173,1) 100%);
+      color: #333;
+    }
+    div.widgetsHolder div.widget.weather.Clouds div.image{
+      background: url('assets/weather/clouds.png') center/contain no-repeat;
+    }
+    
+    div.widgetsHolder div.widget.weather.Rain{
+      background: rgba(1,2,68,1);
+      background: linear-gradient(90deg, rgba(49,88,232,1) 0%, rgba(1,2,68,1) 100%);
+      color: #f5f5f5;
+    }
+    div.widgetsHolder div.widget.weather.Rain div.image{
+      background: url('assets/weather/rain.png') center/contain no-repeat;
+    }
+    
+    div.widgetsHolder div.widget.weather.Thunderstorm{
+      background: rgba(0,0,0,1);
+      background: linear-gradient(90deg, rgba(51,51,51,1) 0%, rgba(0,0,0,1) 100%);
+      color: #f5f5f5;
+    }
+    div.widgetsHolder div.widget.weather.Thunderstorm div.image{
+      background: url('assets/weather/thunderstorm.png') center/contain no-repeat;
+    }
+    
+    div.widgetsHolder div.widget.weather.Snow{ 
+      background: rgba(245,245,245,1);
+      background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+      color: #333;
+    }
+    div.widgetsHolder div.widget.weather.Snow div.image{
+      background: url('assets/weather/snow.png') center/contain no-repeat;
+    }
+
+    div.widgetsHolder div.widget.currency{
+      background: hsla(140, 100%, 20%, 1);
+      background: linear-gradient(90deg, hsla(140, 100%, 30%, 1) 0%, hsla(140, 100%, 20%, 1) 100%);
+      color: hsl(140, 100%, 90%);
+      padding: 10px;
+    }
+
+    div.widget.qr-code{
+      max-width:200px;
+      position: absolute;
+      right: -215px;
+      top: 0;
+      text-align: center;
+      background-color:rgb(110, 3, 3);
+      color: #f5f5f5;
+      padding: 10px;
+      border-radius: 5%;
+      border: 3px solid #fff;
+      outline: 3px solid #333;
+    }
+    div.widget.qr-code img{
+      display: block;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- The video -->
+  <video autoplay muted loop id="myVideo">
+    <source src="./assets/starburst.mp4" type="video/mp4">
+  </video>
+
+  <!-- Melhorar aqui! carregar os módulos marcados no painel da adm-->
+  <!--
+  <div class="widgetsHolder" class="d-print-none">
+    <div class="widget calendar"></div>
+    <div class="widget clock"></div>
+    <div class="widget weather"><div class="temp"></div><div class="image"></div></div>
+    <div class="widget currency"></div>
+    <div class="widget qr-code" style="display:none;"><h5>PEDIDOS DE ASSADOS</h5><img src="./assets/newYearOrdersQR/qr-code.png" alt="qr-code"></div>
+  </div>
+  -->
+
+  <div class="container-fluid">
+    <div class="row" style="height: 100vh;">
+      <div class="col-xl-8 col-xxl-9 banner d-sm-none d-md-block d-print-none">
+        <div class="carousel carousel-dark slide" id="productsCarousel" data-bs-ride="carousel">
+          <div class="carousel-inner"></div>
+        </div>
+      </div>
+      <!-- Melhorar Aqui! Tabela Opcional na ADM-->
+      <!--
+      <div class="col priceTable">
+        <table class="table" id="tableProdList">
+          <thead>
+            <tr>
+              <th class="text-center">#</th>
+              <th>Produto</th>
+              <th class="text-center">Preço</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      -->
+    </div>
+  
+  </div>
+  <!-- jQuery -->
+  <script src="jquery/jquery-3.6.0.min.js"></script>
+  <!-- Popper Production version -->
+  <script src="scripts/popper.min.js"></script>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="bootstrap/js/bootstrap.js"></script>
+
+  <script>
+    "use strict";
+    var jsonResponse="", lastResponseLen=false;
+    var myCarousel = document.getElementById('productsCarousel');
+    const className = 'table-primary';
+    var source;
+    var varUpdateClockTimer;
+    var currentDate, currentTime;
+
+    $(function(e){
+      // make the carousel
+      // make the products list
+      getProdList('butchery');
+      // make active the first carousel item on the products list
+      let itemCode = $('div.carousel-item.active').data('item');
+      $(`tr#${itemCode}`, 'table#tableProdList').addClass( className )
+
+      // monitor products price
+      //start_price_monitor_task();
+
+      // update clock
+      updateClock();
+      varUpdateClockTimer = setInterval( function(){
+        updateClock();
+      }, 1000 );
+
+      // get current weather
+      getCurrentWeather( true );
+
+      // get current currency
+      getCurrentCurrency();
+
+      // refresh every hour
+      setTimeout(function(){
+        getCurrentWeather( true );
+        //location.reload();
+      }, 3600000);
+
+      let cMonth = new Date().getMonth();
+      if( cMonth >=10 ){
+        document.getElementsByClassName('qr-code').style.display = "block";
+      }
+
+    });
+
+    myCarousel.addEventListener('slide.bs.carousel', function (e) {
+      //console.log('e.to: ', e.to );
+      let itemCode = $('div.carousel-item').eq( e.to ).data('item');
+      //let itemPrice = Number( $('td.cPrice', `table#tableProdList tbody tr#${itemCode}`).text().replace(/[^0-9.-]/g,'') );
+      $.each($('div.carousel-item'), function(idx, item){
+        let thisItemCode = $(item).data('item');
+        let thisItemPrice = Number( $('td.cPrice', `table#tableProdList tbody tr#${thisItemCode}`).text().replace(/[^0-9.-]/g,'') );
+        //console.log( 'productsCarousel item: ', thisItemCode );
+        //console.log( 'productsCarousel price: ', thisItemPrice );
+        // check the price of this item
+        $.ajax({
+          url : 'functions.ajax.php',
+          method : 'GET',
+          data : { 'action':'checkProdPrice', 'prodCode':thisItemCode, 'price':thisItemPrice },
+          dataType : 'json',
+          beforeSend : function( jqXHR, settings ){},
+          error : function( jqXHR, textStatus, errorThrown ){
+            //alert(`Carrousel ${textStatus} ${jqXHR.status}: ${errorThrown}`);
+            location.reload();
+          },
+          success : function( data, textStatus, jqXHR ){
+            //console.log( 'checkProdPrice data:', data );
+            if( data.result ){
+              // update table
+              thisItemPrice = Number( data.product.price );
+              var thisItemClass=false;
+              if( data.product.specialStatus==1 && !isNaN(data.product.specialPrice) && data.product.specialPrice > 0 ){
+                thisItemPrice = Number( data.product.specialPrice );
+                thisItemClass=true;
+              }
+              // update tableProdList
+              $('td.cPrice',`table#tableProdList tbody tr#${thisItemCode}`).html( `${Intl.NumberFormat().format(thisItemPrice)}/${data.product.unit}` );
+              if( thisItemClass ){
+                $('td.cPrice',`table#tableProdList tbody tr#${thisItemCode}`).addClass( "special" );
+                $(`div[data-item="${thisItemCode}"]`, `div#productsCarousel`).closest('div.carousel-item').css('background','none');
+              } else {
+                $('td.cPrice',`table#tableProdList tbody tr#${thisItemCode}`).removeClass( "special" );
+                $(`div[data-item="${thisItemCode}"]`, `div#productsCarousel`).closest('div.carousel-item').css('background','#f5f5f5');
+              }
+              // update Carousel
+              $(`div[data-item="${thisItemCode}"] p.price`, `div#productsCarousel`).html( Intl.NumberFormat().format( thisItemPrice ) );
+            }
+          },
+          complete : function( jqXHR, textStatus ){}
+        });
+      });
+      // make the current element focuses in the table
+      $(`tr`, 'div.priceTable').removeClass( className ); // first remove the class of all elements ...
+      $(`tr#${itemCode}`, 'table#tableProdList').addClass( className ); // ... and then add the class to the current one
+    })
+
+    function getProdList( listType ){
+      var ajaxRequestGetProdList = $.ajax({
+      method : 'GET',
+      url : 'functions.ajax.php',
+      data : { 'action':'getProdList', 'listType' : listType },
+      dataType : 'json',
+      beforeSend : function( jqXHR, settings ){
+        //console.log('beforeSend -> settings', settings);
+        if( ajaxRequestGetProdList ){
+          //console.log( 'ajaxRequestGetProdList', ajaxRequestGetProdList );
+          ajaxRequestGetProdList.abort();
+        }
+      },
+      success : function( data, textStatus, jqXHR ){
+        if( data.result ){
+          //console.log('data.prodList', data.prodList);
+          // clear previous content
+          $('table#tableProdList tbody').html('');
+          // create the new content
+          $.each(data.prodList, function(idx,row){
+            // create the products table
+            $('<tr/>',{
+              id:`row_${row.prodCode}`,
+              class:``,
+              html:`<td class="text-center">${idx + 1}</td><td>${row.prodNamePTBR}</td><td class="text-center cPrice">${Intl.NumberFormat().format(row.normal_price)}/${row.unit_text}</td>`
+            }).appendTo('table#tableProdList tbody');
+
+            // create the carousel element
+            $('<div/>',{
+              'id':``,
+              'style':'background:#f5f5f5;',
+              'class':`carousel-item`,
+              'data-item':`row_${row.prodCode}`,
+              'html':`<img src="assets/${row.prod_image}" alt="${row.prod_image}" class="d-block h-100 mx-auto">
+                      <div class="carousel-caption d-none d-md-block">
+                        <h1>${row.prodNamePTBR}</h1>
+                        <p class="price ${row.unit_text}">${Intl.NumberFormat().format(row.normal_price)}</p>
+                      </div>`
+            }).appendTo('div#productsCarousel div.carousel-inner');
+          });
+          // activate the first carousel item
+          $('tr:first-child()', 'table#tableProdList tbody').addClass( className );
+          $('div.carousel-item:first-child()').addClass('active');
+        } else {
+          //console.log( 'data', data );
+        }
+      },
+      error : function( jqXHR, textStatus, errorThrown ){
+        alert( `getProdList ${textStatus} ${jqXHR.status}: ${errorThrown}` );
+        console.alert(`text: ${textStatus}`);
+        console.alert(`error: ${errorThrown}`);
+        location.reload();
+      },
+      complete : function( jqXHR, textStatus ){}
+      });
+    }
+
+    function populateProductsTables(){
+      var ajaxRequestPopulateProductsTable = $.ajax({
+        method : 'POST',
+        url : 'functions.ajax.php',
+        data : { 'action' : 'populateProductsTables' },
+        dataType : 'json',
+        beforeSend : function( jqXHR, settings ){
+          if( ajaxRequestPopulateProductsTable ){
+            // abort previous request if it still running
+            ajaxRequestPopulateProductsTable.abort();
+          }
+        },
+        success : function( data, textStatus, jqXHR ){
+          if( data ){
+            //console.log( 'data', data );
+          } else {
+            //console.log( 'there is no data to show');
+          }
+        },
+        error : function( jqXHR, textStatus, errorThrown ){
+          //console.log(`ERROR ${textStatus}: `, errorThrown)
+          alert(`populateProductsTables ERROR ${textStatus}: ${errorThrown}`);
+          location.reload();
+        },
+        complete : function( jqXHR, textStatus ){}
+      });
+      return;
+    }
+
+    function getBrowserCurrentWindowId(){
+      var ajaxRequestGetBrowserCurrentWindowId = $.ajax({
+        method : 'POST',
+        url : 'functions.ajax.php',
+        data : {'action':'reload-browser'},
+        dataType : 'json',
+        beforeSend : function( jqXHR, settings ){
+          if( ajaxRequestGetBrowserCurrentWindowId ){
+            ajaxRequestGetBrowserCurrentWindowId.abort();
+          }
+        },
+        error : function( jqXHR, textStatus, errorThrown ){
+          alert(`getBrowserCurrentWindowId ERROR ${textStatus}!\n` + errorThrown );
+          location.reload();
+        },
+        success : function( data, textStatus, jqXHR ){
+          if( data.result ){
+            //console.log( 'data.output', data.output );
+          }
+        },
+        complete : function( jqXHR, textStatus ){}
+      });
+      return false;
+    }
+
+    function start_price_monitor_task(){
+      source = new EventSource('admin/products.datatable.ajax.php?action=updateDigitalDisplay');
+      // a message is received
+      source.addEventListener('message', function(e){
+        var result = JSON.parse( e.data );
+        //console.log('EventSource Message', result);
+        // Do whatever with e.data
+
+        if( e.data.search('TERMINATE') != -1 ){
+          source.close();
+        }
+      });
+      source.addEventListener('error', function(e){
+        //console.log('Event Source error occured');
+        source.close();
+      });
+    }
+
+    function stop_price_monitor_task(){
+      source.close();
+    }
+
+    function updateClock(){
+      /*
+       This function update the clock widget and in defined hours, execute another functions
+      */
+      // get the current date/time
+      var dateObject = new Date();
+      currentDate = dateObject.getFullYear()+'-'+( (dateObject.getMonth()+1)<10?'0':'') + (dateObject.getMonth()+1)+'-'+dateObject.getDate();
+      //console.log( 'currentDate: ', currentDate );
+      currentTime = dateObject.getHours()+':'+((dateObject.getMinutes()<10)?'0':'')+dateObject.getMinutes()+':'+((dateObject.getSeconds()<10)?'0':'')+dateObject.getSeconds();
+      //console.log( 'currentTime: ', currentTime );
+
+      // update the clock widget
+      $('div.clock').html(`<div>${dateObject.getHours()}:${((dateObject.getMinutes()<10)?'0':'')+dateObject.getMinutes()}</div>`);
+
+      // update the weather/currency widget every hour
+      if( dateObject.getMinutes()==0 && dateObject.getSeconds()==0 ){
+        getCurrentWeather( true );
+        //location.reload();
+      }
+      if( dateObject.getHours()==12 && dateObject.getMinutes()==0 && dateObject.getSeconds()==0 ){
+        getCurrentCurrency( true );
+      }
+
+      // if clock='0:00:00' it's a new day, update the calendar
+      if( $('div.calendar').html()=='' || currentTime=='0:00:00' ){
+        let date = dateObject.getDate();
+        let day = dateObject.getDay(); // 0=Sunday, 1=Monday, etc
+        let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        let html = `<div class="weekday">${daysOfWeek[day]}</div>
+                    <div class="date">${date}</div>`;
+        $('div.calendar').html( html );
+      }
+    }
+
+    function getCurrentWeather( forceNew=false ){
+      // get openweather url
+      let url = 'https://api.openweathermap.org/data/2.5/weather';
+      // get openWeather API id from DB
+      let apiID = '75cb8a96e644076ef980491088dd2a53';
+      // get lang
+      let lang = 'pt_br';
+      // get units
+      let temp_unit = '&#8457;'; //℃=&#8451;  ℉=&#8457;
+      let units = 'metric';
+      if( units=='metric'){
+        temp_unit = '&#8451;';
+      } else {
+        temp_unit = '&#8457;';
+      }
+      // get location from DB
+      let location = encodeURIComponent('fukuroi,shizuoka,jp');
+
+      // try get info from DB if exists...
+      $.getJSON(`functions.ajax.php?action=getWeather&location=${location}&date=${currentDate}`,function(data,textStatus,jqXHR){
+        console.log( 'getWeather', data );
+        /*
+        if( !forceNew && data.result ){
+          let main=data.data.weather;
+          let temp=data.data.temp;
+          let description=data.data.description;
+          // update widget
+          $('div.weather').addClass(`${main}`);
+          $('div.temp', $('div.weather')).html(`${temp}${temp_unit}<small>${description}</small>`);
+        } else {*/
+          // ... if don't, get from Internet
+          $.getJSON(`${url}?q=${location}&units=${units}&lang=${lang}&appid=${apiID}`, function(data){
+            //console.log('current weather: ', data);
+            let currentWeather = data;
+            // update widget
+            let temp = Math.round( Number( currentWeather.main.temp ) );
+            let main = currentWeather.weather[0].main;
+            let description = currentWeather.weather[0].description;
+            // update widget
+            $('div.weather').addClass(`${main}`);
+            $('div.temp', $('div.weather')).html(`${temp}${temp_unit}<small>${description}</small>`);
+            
+            console.log('current weather', currentWeather);
+            // save info to DB
+            var saveWeatherRequest = $.ajax({
+              method:'POST',
+              url:'functions.ajax.php',
+              data:{ action:'saveWeather', date:currentDate, time:currentTime, location:location, weather:main, description:description, temp:temp, temp_min:currentWeather.main.temp_min, temp_max:currentWeather.main.temp_max },
+              dataType:'json',
+              beforeSend:function(jqXHR, settings){
+                if( saveWeatherRequest ){
+                  saveWeatherRequest.abort();
+                  saveWeatherRequest=false;
+                }
+              },
+              error:function(jqXHR,textStatus,errorThrown){
+                alert(`getCurrentWeather ${textStatus}: ${errorThrown}`);
+                location.reload();
+              },
+              success:function(data,textStatus,jqXHR){
+                console.log('saveWeather SUCCESS', data);
+              },
+              complete:function(jqXHR,textStatus){}
+            });
+          });
+        /*}*/
+      });
+
+    }
+
+    function getCurrentCurrency( forceNew=false ){
+      // try get current currency from DB if exists ...
+      var getCurrencyRequest = $.ajax({
+        method:'GET',
+        url:'functions.ajax.php',
+        data:{ action:'getCurrency', date:currentDate },
+        dataType:'json',
+        beforeSend: function( jqXHR, settings ){
+          if( getCurrencyRequest ){
+            getCurrencyRequest.abort();
+            getCurrencyRequest=false;
+          }
+        },
+        error: function( jqXHR, textStatus, errorThrown ){
+          alert( `getCurrentCurrency ${textStatus} ${jqXHR.status}: ${errorThrown}` );
+          location.reload();
+        },
+        success: function( data, textStatus, jqXHR ){
+          if( data.result && !forceNew ){
+            // log the success
+            console.log('getCurrency SUCCESS: ', data.data);
+            // get base_currency
+            let base_currency='USD';
+            // desired currencies array
+            let target_currencies=['JPY', 'BRL'];
+            let currentCurrency=data.data;
+            target_currencies.forEach(function(val, idx){
+              console.log( val, currentCurrency[val] );
+              // clear old content
+              $('div.widget.currency').html('');
+              // append new content
+              $('div.widget.currency').append(`<div>${base_currency}1 = ${val} ${currentCurrency[val]}</div>`);
+            });
+          } else {
+            // if don't, get it from internet
+            console.log('getCurrency FAIL: ', data);
+            // get apikey
+            const apikey = 'CoTbZz7wgpk7CakFfb2hhK3dqVlhjbaY';
+
+            var myHeaders = new Headers();
+            myHeaders.append("apikey", "CoTbZz7wgpk7CakFfb2hhK3dqVlhjbaY");
+
+            var requestOptions = {
+              method: 'GET',
+              redirect: 'follow',
+              headers: myHeaders
+            };
+
+            fetch("https://api.apilayer.com/currency_data/live?source=USD&currencies=JPY%2C%20BRL", requestOptions)
+            .then((response) => {
+              return response.json()
+            })
+            .then( (result) => {
+              const data = result;
+              console.log('currencies exchange', data);
+
+              $('div.widget.currency')
+                .html('')
+                .append(`<div>${data.source} 1 = JPY `+Intl.NumberFormat('ja-JP', {maximumFractionDigits:2}).format(data.quotes.USDJPY)+`</div><div>${data.source} 1 = BRL `+Intl.NumberFormat('ja-JP',{maximumFractionDigits:2}).format(data.quotes.USDBRL)+`</div>`);
+            })
+            .catch(error => console.log('error', error));
+          }
+        },
+        complete: function( jqXHR, textStatus ){} 
+      });
+    }
+  </script>
+</body>
+</html>
