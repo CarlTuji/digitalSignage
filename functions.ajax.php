@@ -12,6 +12,10 @@
   $result['result']=false;
 
   require_once('./pdo.php');
+  if( !$pdo ){
+    echo $result;
+    exit();
+  }
 
   function getProdList( $listType ){
     global $pdo;
