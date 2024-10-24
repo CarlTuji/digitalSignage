@@ -368,28 +368,33 @@
       //start_price_monitor_task();
 
       // update clock
+      /*
       updateClock();
       varUpdateClockTimer = setInterval( function(){
         updateClock();
       }, 1000 );
+      */
 
       // get current weather
-      getCurrentWeather( true );
+      //getCurrentWeather( true );
 
       // get current currency
-      getCurrentCurrency();
+      //getCurrentCurrency();
 
       // refresh every hour
+      /*
       setTimeout(function(){
         getCurrentWeather( true );
         //location.reload();
       }, 3600000);
-
+      */
+      /*
       let cMonth = new Date().getMonth();
       if( cMonth >=10 ){
         document.getElementsByClassName('qr-code').style.display = "block";
       }
-
+      */
+      
     });
 
     myCarousel.addEventListener('slide.bs.carousel', function (e) {
