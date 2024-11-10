@@ -1,0 +1,196 @@
+# Portuguese translations for PACKAGE package
+# Traduções em português brasileiro para o pacote PACKAGE.
+# Copyright (C) 2024 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Carlos Tuji <carltuji@gmail.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-10 17:56+0900\n"
+"PO-Revision-Date: 2024-11-10 18:00+0900\n"
+"Last-Translator: Carlos Tuji <carltuji@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <ldpbr-translation@lists.sourceforge."
+"net>\n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: products.php:18
+msgid "PRODUCTS"
+msgstr "PRODUTOS"
+
+#: products.php:46
+msgid "Digital Display"
+msgstr "Display Digital"
+
+#: products.php:53
+msgid "Home"
+msgstr "Home"
+
+#: products.php:56 products.php:81
+msgid "Products"
+msgstr "Produtos"
+
+#: products.php:59
+msgid "Makers"
+msgstr "Marcas"
+
+#: products.php:62
+msgid "Units"
+msgstr "Unidades"
+
+#: products.php:72
+msgid "Search"
+msgstr "Procurar"
+
+#: products.php:82
+msgid "Add Product"
+msgstr "Adicionar Produto"
+
+#: products.php:87 products.php:126
+msgid "Product Code"
+msgstr "Cód.Prod."
+
+#: products.php:88 products.php:148
+msgid "Product Name"
+msgstr "Nome do Produto"
+
+#: products.php:89 products.php:156
+msgid "Product Name JP"
+msgstr "Nome do Produto JP"
+
+#: products.php:90
+msgid "Size"
+msgstr "Tamanho"
+
+#: products.php:91
+msgid "Image"
+msgstr "Imagem"
+
+#: products.php:92 products.php:170
+msgid "Maker"
+msgstr "Marca"
+
+#: products.php:93
+msgid "Maker JP"
+msgstr "Marca JP"
+
+#: products.php:94 products.php:176
+msgid "Unit"
+msgstr "Unid"
+
+#: products.php:95
+msgid "Price Normal"
+msgstr "Preço Normal"
+
+#: products.php:96
+msgid "Price Sale"
+msgstr "Preço Promoção"
+
+#: products.php:97
+msgid "Status"
+msgstr "Status"
+
+#: products.php:98 products.php:196 products.php:205
+msgid "Active"
+msgstr "Ativo"
+
+#: products.php:133
+msgid "Product Image"
+msgstr "Imagem do Produto"
+
+#: products.php:140
+msgid "IMAGE"
+msgstr "IMAGEM"
+
+#: products.php:147
+msgid "Product Phonetic Name"
+msgstr "Nome Fonético do Produto (em letras ROMANAS)"
+
+#: products.php:155
+msgid "Product Name in Japanese Style"
+msgstr "Nome do Produto em Japonês (em caracteres japoneses)"
+
+#: products.php:163
+msgid "weight or qty within the product"
+msgstr "peso ou quantidade do produto"
+
+#: products.php:164
+msgid "Size / Weight"
+msgstr "Tamanho / Peso"
+
+#: products.php:183
+msgid "Product Standard Price"
+msgstr "Preço Padrão do Produto"
+
+#: products.php:184
+msgid "Product Price"
+msgstr "Preço do Produto"
+
+#: products.php:189
+msgid "Product Special Sale Price"
+msgstr "Preço Especial de Promoção"
+
+#: products.php:190
+msgid "Product Price Special"
+msgstr "Preço Promocional"
+
+#: products.php:197 products.php:206
+msgid "Inactive"
+msgstr "Inativo"
+
+#: products.php:199
+msgid "Special Status"
+msgstr "Status da Promoção"
+
+#: products.php:204 products.php:208
+msgid "Product Active"
+msgstr "Produto Ativo"
+
+#: products.php:216
+msgid "Save Changes"
+msgstr "Salvar Alterações"
+
+#: products.php:469
+msgid "./js/datatables/DataTables/Internationalisation/Portuguese-Brasil.json"
+msgstr "./js/datatables/DataTables/Internationalisation/Portuguese-Brasil.json"
+
+#: products.php:574
+msgid "save process started ..."
+msgstr "o processo de salvar os dados foi iniciado..."
+
+#: products.php:604
+msgid "There are errors in the form! Fix then and try again"
+msgstr "Existem Erros no formulário! Por favor, corrijá-os e tente novamente"
+
+#: products.php:604 products.php:661
+msgid "Close"
+msgstr "Fechar"
+
+#: products.php:606
+msgid "STOPPED FOR ERRORS"
+msgstr "INTERROMPIDO POR ERROS"
+
+#: products.php:645
+msgid "save: AJAX request started..."
+msgstr "salvar: requisição AJAX iniciada..."
+
+#: products.php:650
+msgid "Wait a moment ..."
+msgstr "Aguarde um momento"
+
+#: products.php:670
+msgid "... save finished!"
+msgstr "... processo salvar dados finalizado"
+
+#: products.php:700
+msgid "get Makers start..."
+msgstr "processo \"get Marcas\" iniciado"
+
+#: test.php:2
+msgid "Good Morning"
+msgstr "Bom Dia!"

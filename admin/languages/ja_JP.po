@@ -1,0 +1,195 @@
+# Japanese translations for PACKAGE package
+# PACKAGE パッケージに対する英訳.
+# Copyright (C) 2024 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Carlos Tuji <carltuji@gmail.com>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-10 17:56+0900\n"
+"PO-Revision-Date: 2024-11-10 18:01+0900\n"
+"Last-Translator: Carlos Tuji <carltuji@gmail.com>\n"
+"Language-Team: Japanese <translation-team-ja@lists.sourceforge.net>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: products.php:18
+msgid "PRODUCTS"
+msgstr ""
+
+#: products.php:46
+msgid "Digital Display"
+msgstr ""
+
+#: products.php:53
+msgid "Home"
+msgstr ""
+
+#: products.php:56 products.php:81
+msgid "Products"
+msgstr ""
+
+#: products.php:59
+msgid "Makers"
+msgstr ""
+
+#: products.php:62
+msgid "Units"
+msgstr ""
+
+#: products.php:72
+msgid "Search"
+msgstr ""
+
+#: products.php:82
+msgid "Add Product"
+msgstr ""
+
+#: products.php:87 products.php:126
+msgid "Product Code"
+msgstr ""
+
+#: products.php:88 products.php:148
+msgid "Product Name"
+msgstr ""
+
+#: products.php:89 products.php:156
+msgid "Product Name JP"
+msgstr ""
+
+#: products.php:90
+msgid "Size"
+msgstr ""
+
+#: products.php:91
+msgid "Image"
+msgstr ""
+
+#: products.php:92 products.php:170
+msgid "Maker"
+msgstr ""
+
+#: products.php:93
+msgid "Maker JP"
+msgstr ""
+
+#: products.php:94 products.php:176
+msgid "Unit"
+msgstr ""
+
+#: products.php:95
+msgid "Price Normal"
+msgstr ""
+
+#: products.php:96
+msgid "Price Sale"
+msgstr ""
+
+#: products.php:97
+msgid "Status"
+msgstr ""
+
+#: products.php:98 products.php:196 products.php:205
+msgid "Active"
+msgstr ""
+
+#: products.php:133
+msgid "Product Image"
+msgstr ""
+
+#: products.php:140
+msgid "IMAGE"
+msgstr ""
+
+#: products.php:147
+msgid "Product Phonetic Name"
+msgstr ""
+
+#: products.php:155
+msgid "Product Name in Japanese Style"
+msgstr ""
+
+#: products.php:163
+msgid "weight or qty within the product"
+msgstr ""
+
+#: products.php:164
+msgid "Size / Weight"
+msgstr ""
+
+#: products.php:183
+msgid "Product Standard Price"
+msgstr ""
+
+#: products.php:184
+msgid "Product Price"
+msgstr ""
+
+#: products.php:189
+msgid "Product Special Sale Price"
+msgstr ""
+
+#: products.php:190
+msgid "Product Price Special"
+msgstr ""
+
+#: products.php:197 products.php:206
+msgid "Inactive"
+msgstr ""
+
+#: products.php:199
+msgid "Special Status"
+msgstr ""
+
+#: products.php:204 products.php:208
+msgid "Product Active"
+msgstr ""
+
+#: products.php:216
+msgid "Save Changes"
+msgstr ""
+
+#: products.php:469
+msgid "./js/datatables/DataTables/Internationalisation/Portuguese-Brasil.json"
+msgstr ""
+
+#: products.php:574
+msgid "save process started ..."
+msgstr ""
+
+#: products.php:604
+msgid "There are errors in the form! Fix then and try again"
+msgstr ""
+
+#: products.php:604 products.php:661
+msgid "Close"
+msgstr ""
+
+#: products.php:606
+msgid "STOPPED FOR ERRORS"
+msgstr ""
+
+#: products.php:645
+msgid "save: AJAX request started..."
+msgstr ""
+
+#: products.php:650
+msgid "Wait a moment ..."
+msgstr ""
+
+#: products.php:670
+msgid "... save finished!"
+msgstr ""
+
+#: products.php:700
+msgid "get Makers start..."
+msgstr ""
+
+#: test.php:2
+msgid "Good Morning"
+msgstr ""
