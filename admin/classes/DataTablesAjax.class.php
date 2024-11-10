@@ -130,7 +130,7 @@
         foreach( $rows as $idx=>$row ){
           $this->data[$idx]['DT_RowId']="Row_" . $row['id'];
           $this->data[$idx]['DT_RowClass']="";
-          $this->data[$idx]['DT_RowData']=$row['id'];
+          $this->data[$idx]['DT_RowData']="";
           $this->data[$idx]['DT_RowAttr']="";
           foreach( $this->columns as $col ){
             $this->data[$idx][ $col['name'] ] = $row[  $col['name'] ];
