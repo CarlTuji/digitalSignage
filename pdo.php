@@ -1,7 +1,7 @@
 <?php
   $serverName = 'localhost';
-  $username = 'digitalDisplay';
-  $password = '$=K3vGat6IEL';
+  $username = 'username'; //change for the mysql username
+  $password = 'password'; //change for the mysql password
   
   // create the connection
   try{
