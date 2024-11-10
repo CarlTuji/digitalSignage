@@ -2,11 +2,13 @@
   class fileUploadHandler{
     public $prodCode;
     public $targetFile;
-    public $defaultImagesFolder = '/var/www/html/6288/assets/';
+    public $defaultImagesFolder;
 
     public function __construct( $targetFolder=false ){
       if( $targetFolder ){
         $this->defaultImagesFolder = $targetFolder;
+      }else{
+        $this->defaultImagesFolder = dirname(__DIR__).'/assets/';
       }
     }
 
