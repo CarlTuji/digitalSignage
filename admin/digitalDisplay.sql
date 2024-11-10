@@ -19,9 +19,9 @@
 -- Current Database: `digitalDisplay`
 --
 
-/*!40000 DROP DATABASE IF EXISTS `digitalDisplay`*/;
+DROP DATABASE IF EXISTS `digitalDisplay`;
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `digitalDisplay` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+CREATE DATABASE IF NOT EXISTS `digitalDisplay` DEFAULT CHARACTER SET utf8mb4;
 
 USE `digitalDisplay`;
 
